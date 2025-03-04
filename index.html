@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang = "pl">
     <head>
@@ -6,6 +7,8 @@
 
         <script type = "text/javascript">
 
+            function odliczanie()
+            {
             var dzisiaj = new Date();
 
             var dzien = dzisiaj.getDate();
@@ -20,17 +23,19 @@
 
             var sekunda = dzisiaj.getSeconds();
 
+            document.getElementById("zegar").innerHTML =
+            dzien + "/" + miesiac + "/" + rok + "/" + "|" + godzina + ":" + minuta + ":" + sekunda;
+
+            setTimeout("odliczanie()", 1000);
+
+            }
+
         </script>
     </head>
 
-    <body>
+    <body onload = "odliczanie();">
 
         <div id = "zegar"></div>
-
-        <script type = "text/javascript">
-            document.getElementById("zegar").innerHTML =
-            dzien + "/" + miesiac + "/" + rok + "/" + "|" + godzina + ":" + minuta + ":" + sekunda;
-        </script>
-
+    
     </body>
 </html>
